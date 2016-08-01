@@ -1,0 +1,51 @@
+body, html {
+  height: 100%;
+  font-size: 150%;
+}
+
+.pure-menu {
+  /*font-size: 200%;*/
+}
+
+.pure-menu-selected {
+  background: #ccc;
+}
+
+.tab-content {
+  display: none;
+  padding: 15px;
+}
+
+.tab-content.current{
+  display: inherit;
+}
+
+
+.data-line {
+  padding-bottom: 10px;
+}
+
+.data-key {
+  font-weight: bold;
+}
+
+.data-value {
+  font-size: 200%;
+}
+
+.data-unit {
+}
+
+
+
+svg text { font: 14px sans-serif; text-anchor: middle }
+svg .caption { font: 18px sans-serif; }
+svg .axes { stroke: #aaa; stroke-width: 0.5px; fill: none; }
+svg .labels text { letter-spacing: 1px; fill: #444; font-size: 12px; }
+svg .arcs {  stroke: #000; stroke-width: 0.5px; }
+svg .arctext text { font-size: 9px; }
+svg #windrose .arctext { fill: #44d; }
+svg #windspeed .arctext { fill: #933; }
+svg .calmwind text {  font-size: 18px; }
+svg text.calmcaption {  font-size: 12px; }
+svg g.tickmarks>text { font-size: 10px; fill: #888;}

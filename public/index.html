@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="http://benpickles.github.io/peity/jquery.peity.min.js"></script>
+
+  <script type="text/javascript" src="svg.js"></script>
+  <script type="text/javascript" src="nmea.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css"> -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div>
+
+    <div class="header">
+      <div class="pure-menu pure-menu-horizontal">
+        <!-- <a href="#" class="pure-menu-heading pure-menu-link">NMEA</a> -->
+        <ul class="pure-menu-list tabs">
+            <li class="pure-menu-item pure-menu-selected"><a href="#tab-main" class="pure-menu-link">Main</a></li>
+            <li class="pure-menu-item"><a href="#tab-log" class="pure-menu-link">Log</a></li>
+            <li class="pure-menu-item"><a href="#tab-settings" class="pure-menu-link">Settings</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="pure-g">
+
+      <div id="tab-main" class="tab-content current">
+        <div class="pure-u-1-3">
+
+          <button id="test1-btn">Test</button>
+
+          <div class="data-line">
+            <div class="data-key">DPT</div>
+            <div class="data-value" id="data-dpt">00.0</div>
+            <div class="data-unit">m</div>
+          </div>
+
+          <div class="data-line">
+            <div class="data-key">AWA</div>
+            <div class="data-value" id="data-awa">000</div>
+            <div class="data-unit">d</div>
+          </div>
+
+          <div class="data-line">
+            <div class="data-key">AWS</div>
+            <div class="data-value" id="data-aws">00</div>
+            <div class="data-unit">kn</div>
+          </div>
+
+
+        </div>
+        <div class="pure-u-2-3">
+          <svg width="600px" height="600px" viewBox="0 0 400 400">
+            <g class="axes">
+              <circle cx="200" cy="200" r="70.5"></circle>
+              <circle cx="200" cy="200" r="107"></circle>
+              <circle cx="200" cy="200" r="143.5"></circle>
+              <circle cx="200" cy="200" r="180"></circle>
+            </g>
+            <g class="tickmarks">
+              <text dy="-2px" transform="translate(200,129.5) ">5kts</text>
+              <text dy="-2px" transform="translate(200,93) ">10kts</text>
+              <text dy="-2px" transform="translate(200,56.5) ">15kts</text>
+            </g>
+            <g class="labels">
+              <text dy="-4px" transform="translate(200,20) rotate(30,0,180)">30</text>
+              <text dy="-4px" transform="translate(200,20) rotate(60,0,180)">60</text>
+              <text dy="-4px" transform="translate(200,20) rotate(90,0,180)">90</text>
+              <text dy="-4px" transform="translate(200,20) rotate(120,0,180)">120</text>
+              <text dy="-4px" transform="translate(200,20) rotate(150,0,180)">150</text>
+              <text dy="-4px" transform="translate(200,20) rotate(180,0,180)">180</text>
+              <text dy="-4px" transform="translate(200,20) rotate(210,0,180)">210</text>
+              <text dy="-4px" transform="translate(200,20) rotate(240,0,180)">240</text>
+              <text dy="-4px" transform="translate(200,20) rotate(270,0,180)">270</text>
+              <text dy="-4px" transform="translate(200,20) rotate(300,0,180)">300</text>
+              <text dy="-4px" transform="translate(200,20) rotate(330,0,180)">330</text>
+              <!-- <text dy="-4px" transform="translate(200,20) rotate(360,0,180)">360</text> -->
+            </g>
+            <g class="arcs">
+              <!-- <path d="M-8.573234784050703,-97.9925219855523A98.3668375,98.3668375 0 0,1 8.573234784050754,-97.99252198555229L2.9632952534203985,-33.87061973511935A34,34 0 0,0 -2.9632952534203802,-33.87061973511935Z" transform="translate(200,200)" style="fill: rgb(251, 233, 233);"><title>360° 9kts</title></path> -->
+              <path id="arc-awa" fill="none" stroke="#446688" stroke-width="130" />
+            </g>
+              <g class="calmwind">
+                <text id="arc-aws-value" transform="translate(200,200)">0</text>
+                <text transform="translate(200,214)" class="calmcaption">kn</text>
+            </g>
+            <!-- <text class="caption" transform="translate(200,420)">AWA</text> -->
+          </svg>
+        </div>
+      </div>
+
+
+
+      <div id="tab-log" class="pure-u-1 tab-content">
+        <pre id="log"></pre>
+      </div>
+
+      <div id="tab-settings" class="pure-u-1 tab-content">
+        <button id="test-btn">Test</button>
+        <button id="reconnect-btn">ReConnect</button>
+      </div>
+
+    </div>
+
+    <div class="footer">
+    </div>
+
+
+  </div>
+
+
+</body>
+</html>
